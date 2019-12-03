@@ -1,32 +1,66 @@
 {% include 'model-header.html' %}
 
 {% block content %}
-  <form method="post">
-    {% csrf_token %}
-    <div class="form-row">
-      <div class="form-group col-md-6 mb-0">
-        {{ form.email|as_crispy_field }}
-      </div>
-      <div class="form-group col-md-6 mb-0">
-        {{ form.password|as_crispy_field }}
-      </div>
+<title>Cadastro</title>
+    <div class="mx-auto" style="width: 30%;
+                                height: auto;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 10px;
+                                padding-right: 5%;
+                                margin-top: 5%;
+                                color: #000;
+                                background-color: #fff;">
+        <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Nome completo</label>
+      <input type="name" class="form-control" id="inputEmail4" placeholder="Ex: João Manuel">
     </div>
-    {{ form.address_1|as_crispy_field }}
-    {{ form.address_2|as_crispy_field }}
-    <div class="form-row">
-      <div class="form-group col-md-6 mb-0">
-        {{ form.city|as_crispy_field }}
-      </div>
-      <div class="form-group col-md-4 mb-0">
-        {{ form.state|as_crispy_field }}
-      </div>
-      <div class="form-group col-md-2 mb-0">
-        {{ form.zip_code|as_crispy_field }}
-      </div>
+    <div class="form-group col-md-6">
+      <label for="inputRegistro">Número de Registro</label>
+      <input type="text" class="form-control" id="inputRegistro" placeholder="Ex: 10598346">
     </div>
-    {{ form.check_me_out|as_crispy_field }}
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
+    <div class="form-group col-md-6">
+      <label for="inputCargo">Cargo</label>
+      <input type="name" class="form-control" id="inputCargo" placeholder="Ex: Estagiário">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputRegistro">Setor</label>
+      <input type="text" class="form-control" id="inputRegistro" placeholder="Ex: Quality Assurance">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputEntrada">Entrada</label>
+      <input type="text" class="form-control" id="inputEntrada" placeholder="9:00">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputEntrada">Intervalo</label>
+      <input type="text" class="form-control" id="inputEntrada" placeholder="12:00">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputEntrada">Retorno</label>
+      <input type="text" class="form-control" id="inputEntrada" placeholder="13:00">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputEntrada">Saída</label>
+      <input type="text" class="form-control" id="inputEntrada" placeholder="17:00">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputEntrada">Dias da Semana</label>
+      <select id="inputDias" class="form-control">
+        <option selected>Selecione...</option>
+        <option>Segunda à Sexta</option>
+        <option>Segunda à Sábado</option>
+        <option>Personalizado</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Salvar</button>
+  <button type="submit" class="btn btn-primary" style="background-color: #989898; border: none; ">Cancelar</button>
+</form>
+    </div>
 {% endblock %}
 
 {% include 'model-footer.html' %}
