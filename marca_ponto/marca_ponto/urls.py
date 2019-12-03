@@ -23,4 +23,5 @@ urlpatterns = [
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
     path('', views.index),
+    path('cadastro/', views.cadastro),
 ]

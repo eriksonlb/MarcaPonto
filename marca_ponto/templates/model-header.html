@@ -1,25 +1,40 @@
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <nav class="navbar navbar-expand-md">
-    <img src="https://i.ibb.co/RGnFMrK/img-01.png" alt="" height="42px">
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+  body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#FFFFFF, #8A8A8A);
+}
+.btn:hover {
+  background-color: #585858!important;
+  </style>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #989898;">
+  <img src="https://i.ibb.co/RGnFMrK/img-01.png" alt="" height="42px" style="padding-right: 50px">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active">Home</a>
-            <a href="#" class="nav-item nav-link">About</a>
-            <a href="#" class="nav-item nav-link">Products</a>
-        </div>
-        <form class="form-inline ml-auto">
-            <input type="text" class="form-control mr-sm-2" placeholder="Search">
-            <button type="submit" class="btn btn-outline-light">Search</button>
-        </form>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cadastro/">Cadastro</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Consulta</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="#">Suporte</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">      
+      <button type="button" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar Ponto</button>
+    </form>
+  </div>
 </nav>
-  
