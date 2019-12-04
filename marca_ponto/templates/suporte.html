@@ -1,0 +1,35 @@
+{% include 'model-header.html' %}
+
+{% block content %}
+<title>Suporte</title>
+    <div class="mx-auto" style="width: 30%;
+                                height: auto;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 10px;
+                                padding-right: 5%;
+                                margin-top: 5%;
+                                color: #000;
+                                background-color: #fff;">
+        <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Título</label>
+      <input type="name" class="form-control" id="inputEmail4" placeholder="Ex: Bug Horário de Verão">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputRegistro">Tipo de Solicitação</label>
+      <input type="text" class="form-control" id="inputRegistro" placeholder="Ex: Erro">
+    </div>
+    <div class="form-group col-md-12">
+    <label for="exampleFormControlTextarea1">Descrição</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ex: O horário do sistema está 1 hora adiantando, mas não estamos no horário de verão."></textarea>
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Salvar</button>
+  <button type="submit" class="btn btn-primary" style="background-color: #989898; border: none; ">Cancelar</button>
+</form>
+    </div>
+{% endblock %}
+
+{% include 'model-footer.html' %}

@@ -31,3 +31,6 @@ def logout_user(request):
 
 def cadastro(request):
     return render(request, 'cadastro.html')
+
+def suporte(request):
+    return render(request, 'suporte.html')
