@@ -161,7 +161,8 @@ div {
         <a class="nav-link" href="/suporte/">Suporte</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">      
+    <form class="form-inline my-2 my-lg-0"> 
+    <span class="label label-default" style="margin-right: 30px;" id="font-hora-nav"></span></h1>    
       <button type="button" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar Ponto</button>
     </form>
     <ul class="navbar-nav">
@@ -172,5 +173,20 @@ div {
     </li>
   </div>
 </nav>
+<script>
+    function updateClock() {
+        var dt = new Date();
+        var sec  = dt.getSeconds().toString();
+        sec = (sec.length == 1) ? '0' + sec : sec;
+        var min  = dt.getMinutes().toString();
+        min = (min.length == 1) ? '0' + min : min;
+        var hr  = dt.getHours().toString();
+        hr = (hr.length == 1) ? '0' + hr : hr;
+        var time = hr + ":" + min + ":" + sec;
+        $("#font-hora").text(time);
+        $("#font-hora-nav").text(time);
+    }
+    setInterval('updateClock()', 500);
+</script>
 </body>
 </html>
