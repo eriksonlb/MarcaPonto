@@ -25,4 +25,6 @@ urlpatterns = [
     path('', views.index),
     path('cadastro/', views.cadastro),
     path('suporte/', views.suporte),
+    path('consulta/', views.consulta),
+    path('espelho_ponto/', views.espelho_ponto),
 ]

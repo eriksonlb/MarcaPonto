@@ -1,0 +1,105 @@
+{% include 'model-header.html' %}
+
+{% block content %}
+<title>Espelho de Ponto</title>
+<div class="mx-auto" id="externa">
+  <h1 id="titulo-div">Espelho de Ponto</h1>
+  <div class='simple-box'>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputEntrada">Colaborador</label>
+          <select id="inputColaborador" class="form-control">
+            <option selected>Selecione...</option>
+            <option>Colaborador1</option>
+            <option>Colaborador2</option>
+            <option>Colaborador3</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputEntrada">Período</label>
+          <input type="text" class="form-control" id="inputEntrada" placeholder="ano">
+          <br>
+          <input type="text" class="form-control" id="inputEntrada" placeholder="mês">
+        </div>
+        <div class="form-group col-md-4 text-center">
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary"
+            style="background-color: #901010; border: none; ">Consultar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+<div class="mx-auto" id="externa" style="padding-top: 2px; margin-top: 2px;">
+  <h1 id="titulo-div2">Colaborador</h1>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover table-light">
+      <thead>
+        <tr>
+          <th>Dia</th>
+          <th>Data</th>
+          <th>Entrada</th>
+          <th>Intervalo</th>
+          <th>Retorno</th>
+          <th>Saída</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Terça-feira</td>
+          <td>01/10/2019</td>
+          <td>9:00</td>
+          <td>12:00</td>
+          <td>14:00</td>
+          <td>17:00</td>
+        </tr>
+        <tr>
+          <td>Quarta-feira</td>
+          <td>02/10/2019</td>
+          <td>9:00</td>
+          <td>12:00</td>
+          <td>14:00</td>
+          <td>17:00</td>
+        </tr>
+        <tr>
+          <td>Quinta-feira</td>
+          <td>03/10/2019</td>
+          <td>9:00</td>
+          <td>12:00</td>
+          <td>14:00</td>
+          <td>17:00</td>
+        </tr>
+        <tr>
+          <td>Sexta-feira</td>
+          <td>04/10/2019</td>
+          <td>9:00</td>
+          <td>12:00</td>
+          <td>14:00</td>
+          <td>17:00</td>
+        </tr>
+        <tr>
+          <td>Sábado</td>
+          <td>05/10/2019</td>
+          <td>9:00</td>
+          <td>12:00</td>
+          <td>14:00</td>
+          <td>17:00</td>
+        </tr>
+        <tr>
+          <td>Domingo</td>
+          <td>06/10/2019</td>
+          <td>9:00</td>
+          <td>12:00</td>
+          <td>14:00</td>
+          <td>17:00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% include 'model-footer.html' %}

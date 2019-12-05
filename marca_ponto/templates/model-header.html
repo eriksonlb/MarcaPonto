@@ -1,3 +1,5 @@
+<html>
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -6,8 +8,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <style>
   body {
-    height: 100%;
-    background-repeat: no-repeat;
+    height: auto;
     background-image: linear-gradient(#FFFFFF, #8A8A8A);
     margin: 0 auto;
     padding: 0;
@@ -20,12 +21,69 @@ head {
     min-height: 100%;
 }
 html{
-    height: 100%;
+    height: auto;
+    min-height: 100%;
 
 }
 div {
     display: block;
 
+}
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.simple-box {
+    /* width: 100%; */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+}
+
+.simple-box header, .simple-box .box-content {
+    display: block;
+    width: 100%;
+}
+
+.simple-box header {
+    /* background: #EBEBEB; */
+    border-radius: 8px 8px 0 0;
+    /* text-align: center; */
+    text-transform: uppercase;
+}
+#externa{
+  width: 60%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 5%;
+  margin-top: 5%;
+  color: #000;
+}
+#titulo-div{
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold; 
+  font-size: 2.7rem;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: left; 
+}
+#titulo-div2{
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold; 
+  font-size: 1.2rem;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: left; 
 }
 #container{
     position: relative;
@@ -45,8 +103,41 @@ div {
 }
 .btn:hover {
   background-color: #585858!important;
-  </style>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #989898;">
+}
+#navbar-fnt {
+    color: #FFFFFF;
+}
+#marca-ponto{    
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold; 
+  font-size: 1.2rem;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+#font-hora{
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: #585858;
+}
+#font-dia{
+  font-family: "Times New Roman", Times, serif;
+  color: #8A8A8A;
+}
+#font-nome{
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #901010;
+}
+#font-cargo{
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light"style="background-color: #A9A9A9;">
   <img src="https://i.ibb.co/RGnFMrK/img-01.png" alt="" height="42px" style="padding-right: 50px">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -54,14 +145,18 @@ div {
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/cadastro/">Cadastro</a>
       </li>      
       <li class="nav-item">
-        <a class="nav-link" href="#">Consulta</a>
+        <a class="nav-link" href="/consulta/">Consulta</a>
+      </li>
+      <li class="nav-item">
+          <li class="nav-item">
+        <a class="nav-link" href="/espelho_ponto/">Espelho de Ponto</a>
       </li><li class="nav-item">
         <a class="nav-link" href="/suporte/">Suporte</a>
       </li>
@@ -69,5 +164,13 @@ div {
     <form class="form-inline my-2 my-lg-0">      
       <button type="button" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar Ponto</button>
     </form>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/logout/">Sair</a>
+      </li>
+    </ul>
+    </li>
   </div>
 </nav>
+</body>
+</html>

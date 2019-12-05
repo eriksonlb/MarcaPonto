@@ -34,3 +34,9 @@ def cadastro(request):
 
 def suporte(request):
     return render(request, 'suporte.html')
+
+def consulta(request):
+    return render(request, 'consulta.html')
+
+def espelho_ponto(request):
+    return render(request, 'espelho_ponto.html')

@@ -1,0 +1,60 @@
+{% include 'model-header.html' %}
+
+{% block content %}
+<title>Consulta</title>
+<div class="mx-auto" id="externa">
+  <h1 id="titulo-div">Consulta</h1>
+  <div class='simple-box'>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputEntrada">Colaborador</label>
+          <select id="inputColaborador" class="form-control">
+            <option selected>Selecione...</option>
+            <option>Colaborador1</option>
+            <option>Colaborador2</option>
+            <option>Colaborador3</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputEntrada">Período</label>
+          <input type="text" class="form-control" id="inputEntrada" placeholder="ano">
+          <br>
+          <input type="text" class="form-control" id="inputEntrada" placeholder="mês">
+        </div>
+        <div class="form-group col-md-4 text-center">
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary"
+            style="background-color: #901010; border: none; ">Consultar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+<div class="mx-auto" id="externa" style="padding-top: 2px; margin-top: 2px;">
+  <h1 id="titulo-div2">Colaborador</h1>
+  <div class="card">
+    <div class="card-header">Relatório - Novembro</div>
+    <div class="card-body">
+      <div class="card">
+        <div class="card-header">Horas Extras</div>
+        <div class="card-body">10 horas e 30 minutos</div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">Horas Negativas</div>
+        <div class="card-body">32 minutos</div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">Faltas</div>
+        <div class="card-body">1 dia</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% include 'model-footer.html' %}
