@@ -23,8 +23,12 @@ urlpatterns = [
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
     path('', views.index),
-    path('cadastro/', views.cadastro),
+    path('colaboradores/cadastro/', views.cadastro),
+    path('colaboradores/cadastro/submit', views.cadastro_colaborador),
+    path('marca_ponto/submit', views.marcar_ponto),
     path('suporte/', views.suporte),
+    path('suporte/submit', views.chamado_suporte),
+    path('colaboradores/lista', views.listar_colaboradores),
     path('consulta/', views.consulta),
     path('espelho_ponto/', views.espelho_ponto),
 ]

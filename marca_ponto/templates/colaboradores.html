@@ -1,0 +1,49 @@
+{% include 'model-header.html' %}
+
+{% block content %}
+<title>Colaboradores</title>
+<div class="mx-auto" id="externa">
+  <h1 id="titulo-div">Colaboradores</h1>
+  {% for c in colaborador %}
+  <div class="card">
+    <div class="card-body">
+      <div class="card">
+        <div class="card-header">{{ c.nome_completo }}</div>
+        <div class="card-body">
+          
+          <p><b>Nome completo: </b> {{ c.nome_completo }} </p>
+          <p><b>Número de Registro: </b> {{ c.numero_registro }} </p>
+          <p><b>Cargo: </b> {{ c.cargo }} </p>
+          <p><b>Setor: </b> {{ c.setor }} </p>
+          <div>
+              <h5>Jornada de Trabalho</h5>
+              <p><b>Dias trabalhados: </b> {{ c.dias }} </p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Entrada</th>
+                    <th>Intervalo</th>
+                    <th>Retorno</th>
+                    <th>Saída</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ c.entrada }}</td>
+                    <td>{{ c.intervalo }}</td>
+                    <td>{{ c.retorno }}</td>
+                    <td>{{ c.saida }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% include 'model-footer.html' %}

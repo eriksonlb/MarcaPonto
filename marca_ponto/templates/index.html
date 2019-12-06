@@ -1,17 +1,20 @@
 {% extends 'model-page.html' %}
 
 {% block content %}
+<title>MarcaPonto</title>
 <div class="mx-auto" id="externa" style="margin-bottom: 10%; width: 40%; text-align: center;">
-    <div class='simple-box' id="marca_ponto">
-        <h2 id="font-hora"></h2>
-        <h4 id="font-dia">{% now "D" %}, {% now "d" %} de {% now "F" %} de {% now "o" %} </h4>
-        <br>
-        <h6 id="font-nome">Erikson Lopes Bezerra</h6>
-        <h5 id="font-cargo">Programador</h5>
-        <br>
-        <button type="button" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar
-            Ponto</button>
-
-    </div>
+    <form action="submit" , method="POST"> {% csrf_token %}
+        <div class='simple-box' id="marca_ponto">
+            <h2 name="hora" id="font-hora"></h2>
+            <h4 name="data" id="font-dia">{% now "D" %}, {% now "d" %} de {% now "F" %} de {% now "o" %} </h4>
+            <br>
+            <h6 name="colaborador" id="font-nome">Erikson Lopes Bezerra</h6>
+            <h5 id="font-cargo">Programador</h5>
+            <br>
+            <button href="/marca_ponto/submit" type="button" class="btn btn-primary"
+                style="background-color: #901010; border: none; ">Marcar
+                Ponto</button>
+    </form>
+</div>
 </div>
 {% endblock %}

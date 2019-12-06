@@ -1,6 +1,10 @@
 from django.contrib import admin
-from .models import registro_ponto
+from .models import RegistroPonto, Colaboradores, ChamadosSuporte
 
-@admin.register(registro_ponto)
+@admin.register(RegistroPonto)
 class registro_ponto_admin(admin.ModelAdmin):
-    list_display = ['usuario', 'data', 'entrada', 'intervalo', 'retorno', 'saida', 'hora_extra', 'hora_negativa']
+    list_display = ['id', 'colaborador', 'data', 'registro']
+    
+@admin.register(Colaboradores)
+class registro_ponto_admin(admin.ModelAdmin):
+    list_display = ['id', 'nome_completo', 'numero_registro', 'cargo', 'setor', 'entrada', 'intervalo', 'retorno', 'saida', 'dias']
