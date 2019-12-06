@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Colaboradores, User
+from .models import Colaboradores, User, RegistroPonto
 # Create your views here.
 
 def login_user(request):
@@ -48,23 +48,30 @@ def cadastro_colaborador(request):
     intervalo = request.POST.get('intervalo')
     retorno = request.POST.get('retorno')
     saida = request.POST.get('saida')
-    dias = request.POST.get('dias')
+    dia = request.POST.get('dias')
     adm = request.POST.get('check-adm')
-    if not adm: 
-        adm = False
-    else:
-        adm = True
+    colaborador = Colaboradores.objects.create(nome_completo=nome_completo,
+                                                numero_registro=numero_registro,
+                                                cargo=cargo,
+                                                setor=setor,
+                                                entrada=entrada,
+                                                intervalo=intervalo,
+                                                retorno=retorno,
+                                                saida=saida,
+                                                dia=dia)
 
     print(nome_completo, adm)
     return redirect('/')
 
 @login_required(login_url='/login/')
 def marcar_ponto(request):
-    colaborador = request.POST.get('get_colaborador')
+    colaborador_nome = request.POST.get('get_colaborador')
     dia = request.POST.get('get_dia')
     data = request.POST.get('get_data')
     hora = request.POST.get('get_hora')
-    print(f'nome: {colaborador} dia: {dia} data: {data} hora:{hora}')
+    print(f'nome: {colaborador_nome} dia: {dia} data: {data} hora:{hora}')
+    colaborador = Colaboradores.objects.get(nome_completo=colaborador_nome)
+    registro = RegistroPonto.objects.create(colaborador=colaborador, dia=dia, data=data, hora=hora)
     return redirect('/colaboradores/lista')
     
     

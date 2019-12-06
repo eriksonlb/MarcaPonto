@@ -186,10 +186,10 @@
             </ul>
             <form action="{% url 'submit' %}" class="form-inline my-2 my-lg-0" method="POST"> {% csrf_token %}
                 <span class="label label-default" style="margin-right: 30px;" id="font-hora-nav"></span></h1>
-                <input name="get_hora" id="id-hora" type="hidden"></input>
-                <input name="get_dia" id="font-data" type="hidden" value='{% now "D" %}'></input>
-                <input name="get_data" id="font-data" type="hidden" value='{% now "d" %} de {% now "F" %} de {% now "o" %}'></input>
-                <input name="get_colaborador" id="font-hora" type="hidden" value="Erikson Lopes Bezerra"></input>
+                <input name="get_hora" id="id-hora-nav" type="hidden"></input>
+                <input name="get_dia" id="font-dia-nav" type="hidden" value='{% now "D" %}'></input>
+                <input name="get_data" id="font-data-nav" type="hidden" value='{% now "d" %} de {% now "F" %} de {% now "o" %}'></input>
+                <input name="get_colaborador" id="font-hora-nav" type="hidden" value="Erikson Lopes Bezerra"></input>
                 <button type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar Ponto</button>
             </form>
             <ul class="navbar-nav">
@@ -210,11 +210,16 @@
             var hr = dt.getHours().toString();
             hr = (hr.length == 1) ? '0' + hr : hr;
             var time = hr + ":" + min + ":" + sec;
+            $("#font-hora-nav").text(time);
+            $("#id-hora-nav").val(time);
             $("#font-hora").text(time);
             $("#id-hora").val(time);
             $("#font-hora-nav").text(time);
         }
-        setInterval('updateClock()', 500);
+
+        $(document).ready(function() {
+            setInterval('updateClock()', 1000);
+        });
     </script>
 </body>
 

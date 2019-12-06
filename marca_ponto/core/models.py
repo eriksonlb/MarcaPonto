@@ -20,7 +20,8 @@ class Colaboradores(models.Model):
 class RegistroPonto(models.Model):
     colaborador = models.ForeignKey(Colaboradores, db_column="nome_completo", on_delete=models.CASCADE, default=0)
     data = models.DateField(auto_now_add=True)
-    registro = models.CharField(max_length=5)
+    dia = models.CharField(max_length=3, null=True)
+    hora = models.CharField(max_length=20, null=True)
     tipo_registro = models.CharField(max_length=9, default=0)
 
     def __str__(self):
