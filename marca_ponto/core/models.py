@@ -11,6 +11,7 @@ class Colaboradores(models.Model):
     retorno = models.CharField(max_length=5)
     saida = models.CharField(max_length=5)
     dias = models.CharField(max_length=16)
+    gerente = models.BooleanField(default=False)
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
@@ -20,6 +21,7 @@ class RegistroPonto(models.Model):
     colaborador = models.ForeignKey(Colaboradores, db_column="nome_completo", on_delete=models.CASCADE, default=0)
     data = models.DateField(auto_now_add=True)
     registro = models.CharField(max_length=5)
+    tipo_registro = models.CharField(max_length=9, default=0)
 
     def __str__(self):
       return str(self.id)

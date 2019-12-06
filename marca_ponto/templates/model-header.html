@@ -1,198 +1,221 @@
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<style>
-  body {
-    height: auto;
-    background-image: linear-gradient(#FFFFFF, #8A8A8A);
-    margin: 0 auto;
-    padding: 0;
-    min-height:100%;
-    position:relative;
-}
-head {
-    display: none;
-    position: relative;
-    min-height: 100%;
-}
-html{
-    height: auto;
-    min-height: 100%;
-
-}
-div {
-    display: block;
-
-}
-* {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            height: auto;
+            background-image: linear-gradient(#FFFFFF, #8A8A8A);
+            margin: 0 auto;
+            padding: 0;
+            min-height: 100%;
+            position: relative;
+        }
+        
+        head {
+            display: none;
+            position: relative;
+            min-height: 100%;
+        }
+        
+        html {
+            height: auto;
+            min-height: 100%;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
             box-sizing: border-box;
-}
-
-.simple-box {
-    /* width: 100%; */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 8px;
-}
-
-.simple-box header, .simple-box .box-content {
-    display: block;
-    width: 100%;
-}
-
-.simple-box header {
-    /* background: #EBEBEB; */
-    border-radius: 8px 8px 0 0;
-    /* text-align: center; */
-    text-transform: uppercase;
-}
-#externa{
-  width: 60%;
-  height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 5%;
-  margin-top: 5%;
-  color: #000;
-}
-#titulo-div{
-  color: #111;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold; 
-  font-size: 2.7rem;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: left; 
-}
-#titulo-div2{
-  color: #111;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold; 
-  font-size: 1.2rem;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: left; 
-}
-#container{
-    position: relative;
-    min-height: 100%;
-
-}
-#IGN_SCT{
-    height: 100%;
-}
-.corpo{
-    position: relative;
-    width: 1024px;
-    left: 50%;
-    margin-left: -512px;
-    min-height:2100px;
-
-}
-.btn:hover {
-  background-color: #585858!important;
-}
-#navbar-fnt {
-    color: #FFFFFF;
-}
-#marca-ponto{    
-  color: #111;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold; 
-  font-size: 1.2rem;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: center;
-}
-#font-hora{
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold;
-  color: #585858;
-}
-#font-dia{
-  font-family: "Times New Roman", Times, serif;
-  color: #8A8A8A;
-}
-#font-nome{
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #901010;
-}
-#font-cargo{
-  font-family: "Times New Roman", Times, serif;
-  font-weight: bold;
-}
-</style>
+        }
+        
+        .simple-box {
+            /* width: 100%; */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 8px;
+        }
+        
+        .simple-box header,
+        .simple-box .box-content {
+            display: block;
+            width: 100%;
+        }
+        
+        .simple-box header {
+            /* background: #EBEBEB; */
+            border-radius: 8px 8px 0 0;
+            /* text-align: center; */
+            text-transform: uppercase;
+        }
+        
+        #externa {
+            width: 60%;
+            height: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 5%;
+            margin-top: 5%;
+            color: #000;
+        }
+        
+        #titulo-div {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            font-size: 2.7rem;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-align: left;
+        }
+        
+        #titulo-div2 {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-align: left;
+        }
+        
+        #container {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        #IGN_SCT {
+            height: 100%;
+        }
+        
+        .corpo {
+            position: relative;
+            width: 1024px;
+            left: 50%;
+            margin-left: -512px;
+            min-height: 2100px;
+        }
+        
+        .btn:hover {
+            background-color: #585858!important;
+        }
+        
+        #navbar-fnt {
+            color: #FFFFFF;
+        }
+        
+        #marca-ponto {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        #font-hora {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            color: #585858;
+        }
+        
+        #font-dia {
+            font-family: "Times New Roman", Times, serif;
+            color: #8A8A8A;
+        }
+        
+        #font-nome {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #901010;
+        }
+        
+        #font-cargo {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light"style="background-color: #A9A9A9;">
-  <img src="https://i.ibb.co/RGnFMrK/img-01.png" alt="" height="42px" style="padding-right: 50px">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A9A9A9;">
+        <img src="https://i.ibb.co/RGnFMrK/img-01.png" alt="" height="42px" style="padding-right: 50px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Administração
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Administração
         <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li class="nav-link"><a class="nav-link" href="/colaboradores/cadastro/">Cadastro</a></li>
-          <li class="nav-link"><a class="nav-link" href="/colaboradores/lista">Colaboradores</a></li>
-        </ul>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="/consulta/">Consulta</a>
-      </li>
-      <li class="nav-item">
-          <li class="nav-item">
-        <a class="nav-link" href="/espelho_ponto/">Espelho de Ponto</a>
-      </li><li class="nav-item">
-        <a class="nav-link" href="/suporte/">Suporte</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0"> 
-    <span class="label label-default" style="margin-right: 30px;" id="font-hora-nav"></span></h1>    
-      <button type="button" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar Ponto</button>
-    </form>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/logout/">Sair</a>
-      </li>
-    </ul>
-    </li>
-  </div>
-</nav>
-<script>
-    function updateClock() {
-        var dt = new Date();
-        var sec  = dt.getSeconds().toString();
-        sec = (sec.length == 1) ? '0' + sec : sec;
-        var min  = dt.getMinutes().toString();
-        min = (min.length == 1) ? '0' + min : min;
-        var hr  = dt.getHours().toString();
-        hr = (hr.length == 1) ? '0' + hr : hr;
-        var time = hr + ":" + min + ":" + sec;
-        $("#font-hora").text(time);
-        $("#font-hora-nav").text(time);
-    }
-    setInterval('updateClock()', 500);
-</script>
+                    <ul class="dropdown-menu">
+                        <li class="nav-link"><a class="nav-link" href="/colaboradores/cadastro/">Cadastro</a></li>
+                        <li class="nav-link"><a class="nav-link" href="/colaboradores/lista">Colaboradores</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/consulta/">Consulta</a>
+                </li>
+                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/espelho_ponto/">Espelho de Ponto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/suporte/">Suporte</a>
+                    </li>
+            </ul>
+            <form action="{% url 'submit' %}" class="form-inline my-2 my-lg-0" method="POST"> {% csrf_token %}
+                <span class="label label-default" style="margin-right: 30px;" id="font-hora-nav"></span></h1>
+                <input name="get_hora" id="id-hora" type="hidden"></input>
+                <input name="get_dia" id="font-data" type="hidden" value='{% now "D" %}'></input>
+                <input name="get_data" id="font-data" type="hidden" value='{% now "d" %} de {% now "F" %} de {% now "o" %}'></input>
+                <input name="get_colaborador" id="font-hora" type="hidden" value="Erikson Lopes Bezerra"></input>
+                <button type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar Ponto</button>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout/">Sair</a>
+                </li>
+            </ul>
+            </li>
+        </div>
+    </nav>
+    <script>
+        function updateClock() {
+            var dt = new Date();
+            var sec = dt.getSeconds().toString();
+            sec = (sec.length == 1) ? '0' + sec : sec;
+            var min = dt.getMinutes().toString();
+            min = (min.length == 1) ? '0' + min : min;
+            var hr = dt.getHours().toString();
+            hr = (hr.length == 1) ? '0' + hr : hr;
+            var time = hr + ":" + min + ":" + sec;
+            $("#font-hora").text(time);
+            $("#id-hora").val(time);
+            $("#font-hora-nav").text(time);
+        }
+        setInterval('updateClock()', 500);
+    </script>
 </body>
+
 </html>

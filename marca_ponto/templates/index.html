@@ -1,20 +1,21 @@
-{% extends 'model-page.html' %}
-
-{% block content %}
+{% extends 'model-page.html' %} {% block content %}
 <title>MarcaPonto</title>
 <div class="mx-auto" id="externa" style="margin-bottom: 10%; width: 40%; text-align: center;">
-    <form action="submit" , method="POST"> {% csrf_token %}
+    <form action="{% url 'submit' %}" method="POST"> {% csrf_token %}
         <div class='simple-box' id="marca_ponto">
             <h2 name="hora" id="font-hora"></h2>
+            <input name="get_hora" id="id-hora" type="hidden"></input>
             <h4 name="data" id="font-dia">{% now "D" %}, {% now "d" %} de {% now "F" %} de {% now "o" %} </h4>
+            <input name="get_dia" id="font-data" type="hidden" value='{% now "D" %}'></input>
+            <input name="get_data" id="font-data" type="hidden" value='{% now "d" %} de {% now "F" %} de {% now "o" %}'></input>
             <br>
             <h6 name="colaborador" id="font-nome">Erikson Lopes Bezerra</h6>
+            <input name="get_colaborador" id="font-hora" type="hidden" value="Erikson Lopes Bezerra"></input>
             <h5 id="font-cargo">Programador</h5>
             <br>
-            <button href="/marca_ponto/submit" type="button" class="btn btn-primary"
-                style="background-color: #901010; border: none; ">Marcar
+            <button href="/marca_ponto/submit" type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar
                 Ponto</button>
     </form>
-</div>
+    </div>
 </div>
 {% endblock %}

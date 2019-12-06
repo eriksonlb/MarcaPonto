@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Colaboradores
+from .models import Colaboradores, User
 # Create your views here.
 
 def login_user(request):
@@ -32,7 +32,11 @@ def logout_user(request):
 
 @login_required(login_url='/login/')
 def cadastro(request):
-    return render(request, 'cadastro.html')
+    """
+    Get da rota colaborador/cadastro retorna para o rendera lista de usuarios.
+    """
+    users = User.objects.all()
+    return render(request, 'cadastro.html', {'users':users})
 
 @login_required(login_url='/login/')
 def cadastro_colaborador(request):
@@ -45,16 +49,24 @@ def cadastro_colaborador(request):
     retorno = request.POST.get('retorno')
     saida = request.POST.get('saida')
     dias = request.POST.get('dias')
-    print(nome_completo)
+    adm = request.POST.get('check-adm')
+    if not adm: 
+        adm = False
+    else:
+        adm = True
+
+    print(nome_completo, adm)
     return redirect('/')
 
 @login_required(login_url='/login/')
 def marcar_ponto(request):
-    colaborador = request.POST.get('colaborador')
-    data = request.POST.get('data')
-    hora = request.POST.get('hora')
-    print(f'nome: {colaborador} data: {data} hora:{hora}')
+    colaborador = request.POST.get('get_colaborador')
+    dia = request.POST.get('get_dia')
+    data = request.POST.get('get_data')
+    hora = request.POST.get('get_hora')
+    print(f'nome: {colaborador} dia: {dia} data: {data} hora:{hora}')
     return redirect('/colaboradores/lista')
+    
     
 @login_required(login_url='/login/')
 def listar_colaboradores(request):

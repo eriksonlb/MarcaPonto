@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.index),
     path('colaboradores/cadastro/', views.cadastro),
     path('colaboradores/cadastro/submit', views.cadastro_colaborador),
-    path('marca_ponto/submit', views.marcar_ponto),
+    path('marca_ponto/submit', views.marcar_ponto, name="submit"),
     path('suporte/', views.suporte),
     path('suporte/submit', views.chamado_suporte),
     path('colaboradores/lista', views.listar_colaboradores),

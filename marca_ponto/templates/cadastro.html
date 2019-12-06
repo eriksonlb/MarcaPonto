@@ -1,61 +1,72 @@
-{% include 'model-header.html' %}
-
-{% block content %}
-<title>Cadastro</title>    
-  <div class="mx-auto" id="externa">
-    <h1 id="titulo-div">Cadastro</h1>                              
-    <div class = 'simple-box'>
-    <form action="submit", method="POST"> {% csrf_token %} 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputName">Nome completo</label>
-          <input type="name" name="nome_completo" class="form-control" id="inputEmail4" placeholder="Ex: João Manuel" maxlength="50">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputRegistro">Número de Registro</label>
-          <input name="numero_registro"  type="text" class="form-control" id="inputRegistro" placeholder="Ex: 10598346" maxlength="9">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputCargo">Cargo</label>
-          <input  name="cargo" type="name" class="form-control" id="inputCargo" placeholder="Ex: Estagiário" maxlength="12">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputSetor">Setor</label>
-          <input name="setor" type="text" class="form-control" id="inputSetor" placeholder="Ex: Quality Assurance" maxlength="12">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-2">
-          <label for="inputEntrada">Entrada</label>
-          <input name="entrada"  type="text" class="form-control" id="inputEntrada" placeholder="9:00" maxlength="5">
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputIntervalo">Intervalo</label>
-          <input name="intervalo"  type="text" class="form-control" id="inputIntervalo" placeholder="12:00" maxlength="5">
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputRetorno">Retorno</label>
-          <input name="retorno"  type="text" class="form-control" id="inputRetorno" placeholder="13:00" maxlength="5">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputSaida">Saída</label>
-        <input name="saida"  type="text" class="form-control" id="inputSaida" placeholder="17:00" maxlength="5">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputEntrada">Dias da Semana</label>
-        <select id="inputDias" class="form-control" name="dias">
+{% include 'model-header.html' %} {% block content %}
+<title>Cadastro</title>
+<div class="mx-auto" id="externa">
+    <h1 id="titulo-div">Cadastro</h1>
+    <div class='simple-box'>
+        <form action="submit" , method="POST"> {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputName">Nome completo</label>
+                    <input type="name" name="nome_completo" class="form-control" id="inputEmail4" placeholder="Ex: João Manuel" maxlength="50">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputRegistro">Número de Registro</label>
+                    <input name="numero_registro" type="text" class="form-control" id="inputRegistro" placeholder="Ex: 10598346" maxlength="9">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputEntrada">Usuário</label>
+                    <select id="inputDias" class="form-control" name="users">
+                            {% for u in users %}    
+                                <option>{{ u.username }}</option>
+                            {% endfor %}
+            </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputCargo">Cargo</label>
+                    <input name="cargo" type="name" class="form-control" id="inputCargo" placeholder="Ex: Estagiário" maxlength="12">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputSetor">Setor</label>
+                    <input name="setor" type="text" class="form-control" id="inputSetor" placeholder="Ex: Quality Assurance" maxlength="12">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputEntrada">Entrada</label>
+                    <input name="entrada" type="text" class="form-control" id="inputEntrada" placeholder="9:00" maxlength="5">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputIntervalo">Intervalo</label>
+                    <input name="intervalo" type="text" class="form-control" id="inputIntervalo" placeholder="12:00" maxlength="5">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputRetorno">Retorno</label>
+                    <input name="retorno" type="text" class="form-control" id="inputRetorno" placeholder="13:00" maxlength="5">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputSaida">Saída</label>
+                    <input name="saida" type="text" class="form-control" id="inputSaida" placeholder="17:00" maxlength="5">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputEntrada">Dias da Semana</label>
+                    <select id="inputDias" class="form-control" name="dias">
           <option selected>Selecione...</option>
           <option>Segunda à Sexta</option>
           <option>Segunda à Sábado</option>
           <option>Personalizado</option>
         </select>
-      </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-check text-align-right">
+                    <input class="form-check-input" type="checkbox" value="" name="check-adm">
+                    <label class="form-check-label" for="defaultCheck1">Administrador</label>
+                </div>
+            </div>
+            <br>
+            <button type="submit" href="colaboradores/cadastro/submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Salvar</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #989898; border: none; ">Cancelar</button>
+        </form>
     </div>
-    <button type="submit" href="colaboradores/cadastro/submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Salvar</button>
-    <button type="submit" class="btn btn-primary" style="background-color: #989898; border: none; ">Cancelar</button>
-    </form>
-  </div>
 </div>
-{% endblock %}
-
-{% include 'model-footer.html' %}
+{% endblock %} {% include 'model-footer.html' %}
