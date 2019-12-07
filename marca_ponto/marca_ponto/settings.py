@@ -70,6 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'marca_ponto.wsgi.application'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
