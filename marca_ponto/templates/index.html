@@ -13,10 +13,15 @@
             <input name="get_colaborador" id="font-hora" type="hidden" value="Erikson Lopes Bezerra"></input>
             <h5 id="font-cargo">Programador</h5>
             <br>
-            <button href="/marca_ponto/submit" type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar
+            <button href="/marca_ponto/submit" onclick="enviado()" type="submit" class="btn btn-primary" style="background-color: #901010; border: none; ">Marcar
                 Ponto</button>
     </form>
     </div>
 </div>
+<script>
+    function enviado() {
+            setTimeout(500);
+            alert('Email enviado')
+</script>
 
 {% endblock %}

@@ -21,12 +21,17 @@
             placeholder="Ex: O horário do sistema está 1 hora adiantando, mas não estamos no horário de verão."></textarea>
         </div>
       </div>
-      <button href="'suporte/submit'" type="submit" class="btn btn-primary"
-        style="background-color: #901010; border: none; ">Enviar</button>
+      <button href="'suporte/submit'" type="submit" class="btn btn-primary" onclick="enviado()" style="background-color: #901010; border: none; ">Enviar</button>
       <button type="" class="btn btn-primary" style="background-color: #989898; border: none; ">Cancelar</button>
     </form>
   </div>
 </div>
+<script>
+  function enviado() {
+            setTimeout(500);
+            alert('Email enviado')
+        };
+</script>
 {% endblock %}
 
 {% include 'model-footer.html' %}

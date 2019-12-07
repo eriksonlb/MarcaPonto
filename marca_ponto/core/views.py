@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Colaboradores, User, RegistroPonto
 from .features import comparar_periodo
 from datetime import datetime
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -77,8 +78,8 @@ def marcar_ponto(request):
     hora = hora.strftime("%H:%M:%S")
     print(f'nome: {colaborador_nome} dia: {dia} data: {data} hora:{hora} tipo: {tipo_registro}')
     colaborador = Colaboradores.objects.get(nome_completo=colaborador_nome)
-    registro = RegistroPonto.objects.create(colaborador=colaborador, dia=dia, data=data, hora=hora)
-    return redirect('/colaboradores/lista')
+    registro = RegistroPonto.objects.create(colaborador=colaborador, dia=dia, data=data, hora=hora, tipo_registro=tipo_registro)
+    return redirect('/')
     
     
 @login_required(login_url='/login/')
@@ -92,9 +93,14 @@ def suporte(request):
 
 @login_required(login_url='/login/')
 def chamado_suporte(request):
+    remetente = request.user.username
     titulo = request.POST.get('colaborador')
     tipo = request.POST.get('tipo')
     descricao = request.POST.get('descricao')
+    assunto = str(f'SUPORTE - {tipo} - {remetente}')
+    # send_mail(assunto, descricao, 'solicitacao@portabilit.com', ['erikson.lopes@live.com', 'facioli@live.com', 'heitor.amaral90@outlook.com'], fail_silently=False)
+
+
     print(f'titulo: {titulo} tipo: {tipo} descricao:{descricao}')    
     return redirect('/')
 
@@ -103,5 +109,7 @@ def consulta(request):
     return render(request, 'consulta.html')
 
 @login_required(login_url='/login/')
-def espelho_ponto(request):
-    return render(request, 'espelho_ponto.html')
+def espelho_ponto(request):   
+    registros = RegistroPonto.objects.all()
+    print(dir(registros))
+    return render(request, 'espelho_ponto.html', {'registros': RegistroPonto.objects.all()})
