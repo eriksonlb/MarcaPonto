@@ -4,6 +4,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Colaboradores, User, RegistroPonto
+from .features import comparar_periodo
+from datetime import datetime
+
 # Create your views here.
 
 def login_user(request):
@@ -35,8 +38,9 @@ def cadastro(request):
     """
     Get da rota colaborador/cadastro retorna para o rendera lista de usuarios.
     """
-    users = User.objects.all()
-    return render(request, 'cadastro.html', {'users':users})
+    # users = User.objects.all()
+    # return render(request, 'cadastro.html', {'users':users})
+    return render(request, 'cadastro.html')
 
 @login_required(login_url='/login/')
 def cadastro_colaborador(request):
@@ -57,10 +61,9 @@ def cadastro_colaborador(request):
                                                 entrada=entrada,
                                                 intervalo=intervalo,
                                                 retorno=retorno,
-                                                saida=saida,
-                                                dia=dia)
+                                                saida=saida)
 
-    print(nome_completo, adm)
+    print(nome_completo)
     return redirect('/')
 
 @login_required(login_url='/login/')
@@ -68,8 +71,11 @@ def marcar_ponto(request):
     colaborador_nome = request.POST.get('get_colaborador')
     dia = request.POST.get('get_dia')
     data = request.POST.get('get_data')
-    hora = request.POST.get('get_hora')
-    print(f'nome: {colaborador_nome} dia: {dia} data: {data} hora:{hora}')
+    # hora = request.POST.get('')
+    hora = datetime.now()
+    tipo_registro = comparar_periodo(hora)
+    hora = hora.strftime("%H:%M:%S")
+    print(f'nome: {colaborador_nome} dia: {dia} data: {data} hora:{hora} tipo: {tipo_registro}')
     colaborador = Colaboradores.objects.get(nome_completo=colaborador_nome)
     registro = RegistroPonto.objects.create(colaborador=colaborador, dia=dia, data=data, hora=hora)
     return redirect('/colaboradores/lista')
